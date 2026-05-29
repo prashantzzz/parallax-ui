@@ -41,9 +41,7 @@ const features = [
     description: "Unlock locations unavailable to the public.",
     bgColor: "bg-[#F5C7C7]",
     textColor: "text-[#372626]",
-    rotation: -20,
-    position: "10%",
-    yOffset: 25,
+    angle: 0,
     icon: (
       <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle opacity="0.2" cx="31.0373" cy="31.0373" r="22.7209" transform="rotate(-30 31.0373 31.0373)" fill="#372626"/>
@@ -56,9 +54,7 @@ const features = [
     description: "Reconnect with untouched landscapes and silence.",
     bgColor: "bg-[#E2F5C7]",
     textColor: "text-[#313726]",
-    rotation: -10,
-    position: "28%",
-    yOffset: 85,
+    angle: 15,
     icon: (
       <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(-15 27.8273 27.8273)" fill="#313726"/>
@@ -71,9 +67,7 @@ const features = [
     description: "Discover secluded destinations far from crowded tourism.",
     bgColor: "bg-[#C7E9F5]",
     textColor: "text-[#263237]",
-    rotation: 0,
-    position: "50%",
-    yOffset: 125,
+    angle: 30,
     icon: (
       <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle opacity="0.2" cx="22.7209" cy="22.7209" r="22.7209" fill="#263237"/>
@@ -86,9 +80,7 @@ const features = [
     description: "Experiences tailored to your lifestyle and preferences.",
     bgColor: "bg-[#F5EBC7]",
     textColor: "text-[#373326]",
-    rotation: 10,
-    position: "72%",
-    yOffset: 85,
+    angle: 45,
     icon: (
       <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(15 27.8273 27.8273)" fill="#373326"/>
@@ -101,13 +93,258 @@ const features = [
     description: "Dedicated support for every stage of your trip.",
     bgColor: "bg-[#CAC7F5]",
     textColor: "text-[#262637]",
-    rotation: 20,
-    position: "90%",
-    yOffset: 25,
+    angle: 60,
     icon: (
       <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle opacity="0.2" cx="31.0373" cy="31.0373" r="22.7209" transform="rotate(30 31.0373 31.0373)" fill="#262637"/>
         <path d="M28.7299 27.2005C30.5347 28.2423 31.1531 30.5499 30.1112 32.3547L28.6011 34.9706C27.923 36.1452 28.3254 37.647 29.4999 38.3252C30.6745 39.0036 32.1766 38.6011 32.8548 37.4264L34.9342 33.8248C37.018 30.2155 35.7815 25.6004 32.1723 23.5164L28.5703 21.4367C27.3956 20.7585 25.8935 21.1609 25.2153 22.3356C24.5371 23.5103 24.9396 25.0124 26.1144 25.6905L28.7299 27.2005Z" fill="#262637"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Hidden Gems",
+    description: "Discover destinations only locals know about.",
+    bgColor: "bg-[#F5C7E8]",
+    textColor: "text-[#372638]",
+    angle: 75,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(-15 27.8273 27.8273)" fill="#372638"/>
+        <path d="M23.4826 26.7459C25.4954 26.2064 27.5644 27.4009 28.1039 29.4137L28.8858 32.3313C29.2369 33.6413 30.5833 34.4188 31.8934 34.0679C33.2036 33.7169 33.9812 32.3702 33.6302 31.06L32.5538 27.0429C31.4751 23.0173 27.3373 20.6282 23.3117 21.7068L19.2941 22.7832C17.9839 23.1342 17.2063 24.4809 17.5574 25.7911C17.9085 27.1013 19.2552 27.8788 20.5654 27.5277L23.4826 26.7459Z" fill="#372638"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Personal Guides",
+    description: "Expert local knowledge and intimate experiences.",
+    bgColor: "bg-[#C7F5E2]",
+    textColor: "text-[#263726]",
+    angle: 90,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(15 27.8273 27.8273)" fill="#263726"/>
+        <path d="M24.6054 24.7184C26.6183 25.2577 27.8129 27.3266 27.2736 29.3395L26.492 32.2572C26.141 33.5672 26.9184 34.9137 28.2284 35.2648C29.5386 35.616 30.8853 34.8385 31.2364 33.5283L32.3128 29.5113C33.3914 25.4856 31.0025 21.3478 26.9769 20.269L22.9594 19.1924C21.6492 18.8413 20.3025 19.6188 19.9514 20.929C19.6004 22.2392 20.3779 23.5859 21.6882 23.9369L24.6054 24.7184Z" fill="#263726"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Wellness Retreats",
+    description: "Rejuvenate mind, body, and soul in paradise.",
+    bgColor: "bg-[#E8C7F5]",
+    textColor: "text-[#372637]",
+    angle: 105,
+    icon: (
+      <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="31.0373" cy="31.0373" r="22.7209" transform="rotate(30 31.0373 31.0373)" fill="#372637"/>
+        <path d="M28.7299 27.2005C30.5347 28.2423 31.1531 30.5499 30.1112 32.3547L28.6011 34.9706C27.923 36.1452 28.3254 37.647 29.4999 38.3252C30.6745 39.0036 32.1766 38.6011 32.8548 37.4264L34.9342 33.8248C37.018 30.2155 35.7815 25.6004 32.1723 23.5164L28.5703 21.4367C27.3956 20.7585 25.8935 21.1609 25.2153 22.3356C24.5371 23.5103 24.9396 25.0124 26.1144 25.6905L28.7299 27.2005Z" fill="#372637"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Exclusive Access",
+    description: "Unlock locations unavailable to the public.",
+    bgColor: "bg-[#F5C7C7]",
+    textColor: "text-[#372626]",
+    angle: 120,
+    icon: (
+      <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="31.0373" cy="31.0373" r="22.7209" transform="rotate(-30 31.0373 31.0373)" fill="#372626"/>
+        <path d="M26.5608 31.1172C28.3654 30.0752 30.6731 30.6935 31.7151 32.4981L33.2255 35.1139C33.9036 36.2884 35.4055 36.6909 36.58 36.0129C37.7548 35.3348 38.1574 33.8327 37.4791 32.658L35.3998 29.0564C33.3159 25.4471 28.7008 24.2104 25.0914 26.2941L21.4894 28.3736C20.3147 29.0518 19.9122 30.5539 20.5904 31.7285C21.2686 32.9032 22.7707 33.3057 23.9453 32.6274L26.5608 31.1172Z" fill="#372626"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Nature Escapes",
+    description: "Reconnect with untouched landscapes and silence.",
+    bgColor: "bg-[#E2F5C7]",
+    textColor: "text-[#313726]",
+    angle: 135,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(-15 27.8273 27.8273)" fill="#313726"/>
+        <path d="M23.4826 26.7459C25.4954 26.2064 27.5644 27.4009 28.1039 29.4137L28.8858 32.3313C29.2369 33.6413 30.5833 34.4188 31.8934 34.0679C33.2036 33.7169 33.9812 32.3702 33.6302 31.06L32.5538 27.0429C31.4751 23.0173 27.3373 20.6282 23.3117 21.7068L19.2941 22.7832C17.9839 23.1342 17.2063 24.4809 17.5574 25.7911C17.9085 27.1013 19.2552 27.8788 20.5654 27.5277L23.4826 26.7459Z" fill="#313726"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Private Retreats",
+    description: "Discover secluded destinations far from crowded tourism.",
+    bgColor: "bg-[#C7E9F5]",
+    textColor: "text-[#263237]",
+    angle: 150,
+    icon: (
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="22.7209" cy="22.7209" r="22.7209" fill="#263237"/>
+        <path d="M18.8043 20.5518C20.8881 20.5517 22.5775 22.241 22.5776 24.3248L22.5777 27.3454C22.5778 28.7017 23.6772 29.8011 25.0334 29.8012C26.3898 29.8013 27.4895 28.7017 27.4895 27.3453V23.1865C27.4895 19.0189 24.111 15.6403 19.9434 15.6402L15.7841 15.6401C14.4277 15.64 13.3281 16.7396 13.3281 18.096C13.3281 19.4524 14.4277 20.552 15.7842 20.552L18.8043 20.5518Z" fill="#263237"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Curated Adventures",
+    description: "Experiences tailored to your lifestyle and preferences.",
+    bgColor: "bg-[#F5EBC7]",
+    textColor: "text-[#373326]",
+    angle: 165,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(15 27.8273 27.8273)" fill="#373326"/>
+        <path d="M24.6054 24.7184C26.6183 25.2577 27.8129 27.3266 27.2736 29.3395L26.492 32.2572C26.141 33.5672 26.9184 34.9137 28.2284 35.2648C29.5386 35.616 30.8853 34.8385 31.2364 33.5283L32.3128 29.5113C33.3914 25.4856 31.0025 21.3478 26.9769 20.269L22.9594 19.1924C21.6492 18.8413 20.3025 19.6188 19.9514 20.929C19.6004 22.2392 20.3779 23.5859 21.6882 23.9369L24.6054 24.7184Z" fill="#373326"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Luxury Concierge",
+    description: "Dedicated support for every stage of your trip.",
+    bgColor: "bg-[#CAC7F5]",
+    textColor: "text-[#262637]",
+    angle: 180,
+    icon: (
+      <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="31.0373" cy="31.0373" r="22.7209" transform="rotate(30 31.0373 31.0373)" fill="#262637"/>
+        <path d="M28.7299 27.2005C30.5347 28.2423 31.1531 30.5499 30.1112 32.3547L28.6011 34.9706C27.923 36.1452 28.3254 37.647 29.4999 38.3252C30.6745 39.0036 32.1766 38.6011 32.8548 37.4264L34.9342 33.8248C37.018 30.2155 35.7815 25.6004 32.1723 23.5164L28.5703 21.4367C27.3956 20.7585 25.8935 21.1609 25.2153 22.3356C24.5371 23.5103 24.9396 25.0124 26.1144 25.6905L28.7299 27.2005Z" fill="#262637"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Hidden Gems",
+    description: "Discover destinations only locals know about.",
+    bgColor: "bg-[#F5C7E8]",
+    textColor: "text-[#372638]",
+    angle: 195,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(-15 27.8273 27.8273)" fill="#372638"/>
+        <path d="M23.4826 26.7459C25.4954 26.2064 27.5644 27.4009 28.1039 29.4137L28.8858 32.3313C29.2369 33.6413 30.5833 34.4188 31.8934 34.0679C33.2036 33.7169 33.9812 32.3702 33.6302 31.06L32.5538 27.0429C31.4751 23.0173 27.3373 20.6282 23.3117 21.7068L19.2941 22.7832C17.9839 23.1342 17.2063 24.4809 17.5574 25.7911C17.9085 27.1013 19.2552 27.8788 20.5654 27.5277L23.4826 26.7459Z" fill="#372638"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Personal Guides",
+    description: "Expert local knowledge and intimate experiences.",
+    bgColor: "bg-[#C7F5E2]",
+    textColor: "text-[#263726]",
+    angle: 210,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(15 27.8273 27.8273)" fill="#263726"/>
+        <path d="M24.6054 24.7184C26.6183 25.2577 27.8129 27.3266 27.2736 29.3395L26.492 32.2572C26.141 33.5672 26.9184 34.9137 28.2284 35.2648C29.5386 35.616 30.8853 34.8385 31.2364 33.5283L32.3128 29.5113C33.3914 25.4856 31.0025 21.3478 26.9769 20.269L22.9594 19.1924C21.6492 18.8413 20.3025 19.6188 19.9514 20.929C19.6004 22.2392 20.3779 23.5859 21.6882 23.9369L24.6054 24.7184Z" fill="#263726"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Wellness Retreats",
+    description: "Rejuvenate mind, body, and soul in paradise.",
+    bgColor: "bg-[#E8C7F5]",
+    textColor: "text-[#372637]",
+    angle: 225,
+    icon: (
+      <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="31.0373" cy="31.0373" r="22.7209" transform="rotate(30 31.0373 31.0373)" fill="#372637"/>
+        <path d="M28.7299 27.2005C30.5347 28.2423 31.1531 30.5499 30.1112 32.3547L28.6011 34.9706C27.923 36.1452 28.3254 37.647 29.4999 38.3252C30.6745 39.0036 32.1766 38.6011 32.8548 37.4264L34.9342 33.8248C37.018 30.2155 35.7815 25.6004 32.1723 23.5164L28.5703 21.4367C27.3956 20.7585 25.8935 21.1609 25.2153 22.3356C24.5371 23.5103 24.9396 25.0124 26.1144 25.6905L28.7299 27.2005Z" fill="#372637"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Exclusive Access",
+    description: "Unlock locations unavailable to the public.",
+    bgColor: "bg-[#F5C7C7]",
+    textColor: "text-[#372626]",
+    angle: 240,
+    icon: (
+      <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="31.0373" cy="31.0373" r="22.7209" transform="rotate(-30 31.0373 31.0373)" fill="#372626"/>
+        <path d="M26.5608 31.1172C28.3654 30.0752 30.6731 30.6935 31.7151 32.4981L33.2255 35.1139C33.9036 36.2884 35.4055 36.6909 36.58 36.0129C37.7548 35.3348 38.1574 33.8327 37.4791 32.658L35.3998 29.0564C33.3159 25.4471 28.7008 24.2104 25.0914 26.2941L21.4894 28.3736C20.3147 29.0518 19.9122 30.5539 20.5904 31.7285C21.2686 32.9032 22.7707 33.3057 23.9453 32.6274L26.5608 31.1172Z" fill="#372626"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Nature Escapes",
+    description: "Reconnect with untouched landscapes and silence.",
+    bgColor: "bg-[#E2F5C7]",
+    textColor: "text-[#313726]",
+    angle: 255,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(-15 27.8273 27.8273)" fill="#313726"/>
+        <path d="M23.4826 26.7459C25.4954 26.2064 27.5644 27.4009 28.1039 29.4137L28.8858 32.3313C29.2369 33.6413 30.5833 34.4188 31.8934 34.0679C33.2036 33.7169 33.9812 32.3702 33.6302 31.06L32.5538 27.0429C31.4751 23.0173 27.3373 20.6282 23.3117 21.7068L19.2941 22.7832C17.9839 23.1342 17.2063 24.4809 17.5574 25.7911C17.9085 27.1013 19.2552 27.8788 20.5654 27.5277L23.4826 26.7459Z" fill="#313726"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Private Retreats",
+    description: "Discover secluded destinations far from crowded tourism.",
+    bgColor: "bg-[#C7E9F5]",
+    textColor: "text-[#263237]",
+    angle: 270,
+    icon: (
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="22.7209" cy="22.7209" r="22.7209" fill="#263237"/>
+        <path d="M18.8043 20.5518C20.8881 20.5517 22.5775 22.241 22.5776 24.3248L22.5777 27.3454C22.5778 28.7017 23.6772 29.8011 25.0334 29.8012C26.3898 29.8013 27.4895 28.7017 27.4895 27.3453V23.1865C27.4895 19.0189 24.111 15.6403 19.9434 15.6402L15.7841 15.6401C14.4277 15.64 13.3281 16.7396 13.3281 18.096C13.3281 19.4524 14.4277 20.552 15.7842 20.552L18.8043 20.5518Z" fill="#263237"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Curated Adventures",
+    description: "Experiences tailored to your lifestyle and preferences.",
+    bgColor: "bg-[#F5EBC7]",
+    textColor: "text-[#373326]",
+    angle: 285,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(15 27.8273 27.8273)" fill="#373326"/>
+        <path d="M24.6054 24.7184C26.6183 25.2577 27.8129 27.3266 27.2736 29.3395L26.492 32.2572C26.141 33.5672 26.9184 34.9137 28.2284 35.2648C29.5386 35.616 30.8853 34.8385 31.2364 33.5283L32.3128 29.5113C33.3914 25.4856 31.0025 21.3478 26.9769 20.269L22.9594 19.1924C21.6492 18.8413 20.3025 19.6188 19.9514 20.929C19.6004 22.2392 20.3779 23.5859 21.6882 23.9369L24.6054 24.7184Z" fill="#373326"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Luxury Concierge",
+    description: "Dedicated support for every stage of your trip.",
+    bgColor: "bg-[#CAC7F5]",
+    textColor: "text-[#262637]",
+    angle: 300,
+    icon: (
+      <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="31.0373" cy="31.0373" r="22.7209" transform="rotate(30 31.0373 31.0373)" fill="#262637"/>
+        <path d="M28.7299 27.2005C30.5347 28.2423 31.1531 30.5499 30.1112 32.3547L28.6011 34.9706C27.923 36.1452 28.3254 37.647 29.4999 38.3252C30.6745 39.0036 32.1766 38.6011 32.8548 37.4264L34.9342 33.8248C37.018 30.2155 35.7815 25.6004 32.1723 23.5164L28.5703 21.4367C27.3956 20.7585 25.8935 21.1609 25.2153 22.3356C24.5371 23.5103 24.9396 25.0124 26.1144 25.6905L28.7299 27.2005Z" fill="#262637"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Hidden Gems",
+    description: "Discover destinations only locals know about.",
+    bgColor: "bg-[#F5C7E8]",
+    textColor: "text-[#372638]",
+    angle: 315,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(-15 27.8273 27.8273)" fill="#372638"/>
+        <path d="M23.4826 26.7459C25.4954 26.2064 27.5644 27.4009 28.1039 29.4137L28.8858 32.3313C29.2369 33.6413 30.5833 34.4188 31.8934 34.0679C33.2036 33.7169 33.9812 32.3702 33.6302 31.06L32.5538 27.0429C31.4751 23.0173 27.3373 20.6282 23.3117 21.7068L19.2941 22.7832C17.9839 23.1342 17.2063 24.4809 17.5574 25.7911C17.9085 27.1013 19.2552 27.8788 20.5654 27.5277L23.4826 26.7459Z" fill="#372638"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Personal Guides",
+    description: "Expert local knowledge and intimate experiences.",
+    bgColor: "bg-[#C7F5E2]",
+    textColor: "text-[#263726]",
+    angle: 330,
+    icon: (
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="27.8273" cy="27.8273" r="22.7209" transform="rotate(15 27.8273 27.8273)" fill="#263726"/>
+        <path d="M24.6054 24.7184C26.6183 25.2577 27.8129 27.3266 27.2736 29.3395L26.492 32.2572C26.141 33.5672 26.9184 34.9137 28.2284 35.2648C29.5386 35.616 30.8853 34.8385 31.2364 33.5283L32.3128 29.5113C33.3914 25.4856 31.0025 21.3478 26.9769 20.269L22.9594 19.1924C21.6492 18.8413 20.3025 19.6188 19.9514 20.929C19.6004 22.2392 20.3779 23.5859 21.6882 23.9369L24.6054 24.7184Z" fill="#263726"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Wellness Retreats",
+    description: "Rejuvenate mind, body, and soul in paradise.",
+    bgColor: "bg-[#E8C7F5]",
+    textColor: "text-[#372637]",
+    angle: 345,
+    icon: (
+      <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle opacity="0.2" cx="31.0373" cy="31.0373" r="22.7209" transform="rotate(30 31.0373 31.0373)" fill="#372637"/>
+        <path d="M28.7299 27.2005C30.5347 28.2423 31.1531 30.5499 30.1112 32.3547L28.6011 34.9706C27.923 36.1452 28.3254 37.647 29.4999 38.3252C30.6745 39.0036 32.1766 38.6011 32.8548 37.4264L34.9342 33.8248C37.018 30.2155 35.7815 25.6004 32.1723 23.5164L28.5703 21.4367C27.3956 20.7585 25.8935 21.1609 25.2153 22.3356C24.5371 23.5103 24.9396 25.0124 26.1144 25.6905L28.7299 27.2005Z" fill="#372637"/>
       </svg>
     ),
   },
@@ -266,6 +503,7 @@ export default function Index() {
   const heroContentRef = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
   const objectRef = useRef<HTMLDivElement>(null);
+  const circularContainerRef = useRef<HTMLDivElement>(null);
   const globalNavRef = useRef<HTMLElement>(null);
 
   // Drag Constraint states
@@ -274,6 +512,9 @@ export default function Index() {
 
   const sec2CarouselRef = useRef<HTMLDivElement>(null);
   const [sec2Constraints, setSec2Constraints] = useState({ left: 0, right: 0 });
+
+  // Circular rotation state
+  const [circularRotation, setCircularRotation] = useState(0);
 
   // Update drag constraints based on scrollWidth and offsetWidth
   useEffect(() => {
@@ -366,8 +607,8 @@ export default function Index() {
 
     // Fly left decorative layer out to the left
     scrollTl.to(forestLeftRef.current, {
-      scale: 15,
-      xPercent: -180,
+      scale: 8,
+      xPercent: -500,
       yPercent: -20,
       opacity: 0,
       ease: "power1.in",
@@ -376,8 +617,8 @@ export default function Index() {
 
     // Fly right decorative layer out to the right
     scrollTl.to(forestRightRef.current, {
-      scale: 15,
-      xPercent: 180,
+      scale: 8,
+      xPercent: 500,
       yPercent: -20,
       opacity: 0,
       ease: "power1.in",
@@ -405,16 +646,27 @@ export default function Index() {
     // Zoom out Object.png from bottom to fit in the frame
     scrollTl.fromTo(objectRef.current,
       { opacity: 0, scale: 1.25, y: 150 },
-      { opacity: 1, scale: 1, y: 0, duration: 0.75 },
+      { opacity: 1, scale: 1, y: 30, duration: 0.75 },
       0.35
     );
 
     // Stagger entry of tilted cards in Section Two
     scrollTl.fromTo(".sec2-card-anim",
-      { opacity: 0, y: 150, scale: 0.8 },
+      { opacity: 0, y: 100, scale: 0.8 },
       { opacity: 1, y: 0, scale: 1, stagger: 0.08, duration: 0.6, ease: "power2.out" },
       0.5
     );
+
+    // Animate circular rotation for cards (cards stay upright, only position changes)
+    const rotationObj = { rotation: 0 };
+    scrollTl.to(rotationObj, {
+      rotation: 360,
+      ease: "none",
+      duration: 2,
+      onUpdate: () => {
+        setCircularRotation(rotationObj.rotation);
+      },
+    }, 0.5);
 
     return () => {
       // Clean up GSAP timelines & triggers on unmount
@@ -714,39 +966,49 @@ export default function Index() {
                   </svg>
                 </div>
 
-                {features.map((feature, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="sec2-card-anim absolute flex-shrink-0 z-10"
-                      style={{
-                        left: feature.position,
-                        bottom: `${feature.yOffset}px`,
-                        transform: `translateX(-50%) rotateZ(${feature.rotation}deg)`,
-                      }}
-                    >
-                      {/* Nested Wrapper for compositor-accelerated CSS keyframe oscillation, isolating drag */}
-                      <div className={`w-[226px] h-[244px] rounded-[40px] shadow-2xl relative p-6 flex flex-col ${feature.bgColor} float-card-${index}`}>
-                        
-                        {/* SVG Icon top right */}
-                        <div className="absolute top-4 right-4">
-                          {feature.icon}
-                        </div>
+                <div ref={circularContainerRef} className="absolute inset-0">
+                  {features.map((feature, index) => {
+                    // Calculate circular positioning with 3x larger radius
+                    const radius = 840; // Distance from center (3x larger)
+                    const angleRad = ((feature.angle + circularRotation) * Math.PI) / 180;
+                    const centerX = 600; // 1200px / 2
+                    const centerY = 850; // Moved to bottom
+                    const x = centerX + radius * Math.cos(angleRad);
+                    const y = centerY + radius * Math.sin(angleRad);
 
-                        {/* Title & description absolute base */}
-                        <div className="mt-auto flex flex-col gap-2">
-                          <h3 className={`font-viaoda text-[28px] font-normal leading-[94%] ${feature.textColor}`}>
-                            {feature.title}
-                          </h3>
-                          <p className={`font-imprima text-[13px] font-normal leading-[120%] opacity-60 ${feature.textColor}`}>
-                            {feature.description}
-                          </p>
-                        </div>
+                    return (
+                      <div
+                        key={index}
+                        className="sec2-card-anim absolute flex-shrink-0 z-10"
+                        style={{
+                          left: `${x}px`,
+                          top: `${y}px`,
+                          transform: `translate(-50%, -50%)`,
+                        }}
+                      >
+                        {/* Nested Wrapper for compositor-accelerated CSS keyframe oscillation, isolating drag */}
+                        <div className={`w-[200px] h-[216px] rounded-[40px] shadow-2xl relative p-6 flex flex-col ${feature.bgColor} float-card-${index}`}>
+                          
+                          {/* SVG Icon top right */}
+                          <div className="absolute top-4 right-4">
+                            {feature.icon}
+                          </div>
 
+                          {/* Title & description absolute base */}
+                          <div className="mt-auto flex flex-col gap-2">
+                            <h3 className={`font-viaoda text-[28px] font-normal leading-[94%] ${feature.textColor}`}>
+                              {feature.title}
+                            </h3>
+                            <p className={`font-imprima text-[13px] font-normal leading-[120%] opacity-60 ${feature.textColor}`}>
+                              {feature.description}
+                            </p>
+                          </div>
+
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </motion.div>
             </div>
           </div>
